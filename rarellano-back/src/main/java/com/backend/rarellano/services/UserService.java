@@ -69,7 +69,7 @@ public class UserService {
 			Optional<User> user = userRepository.findById(userDTO);
 			User usere = user.get();
 			// Se convierte Categoria a CategoriaDTO
-			User userDto = modelMapper.map(user, User.class);
+			User userDto = modelMapper.map(usere, User.class);
 			return userDto;
 		} else {
 			return null;

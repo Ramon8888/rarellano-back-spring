@@ -7,8 +7,6 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
@@ -45,7 +43,7 @@ public class UserController {
 
 			try {
 				user.setCreatedAt(new Date());
-				//user.setEstatus(true);
+				user.setStatus(true);
 				userService.create(user);
 				response.put("< INFO > YOU HAVE CREATED A NEW USER: ", user.toString());
 				return ResponseEntity.ok(response);
@@ -103,8 +101,7 @@ public class UserController {
 		Map<String, Object> response = new HashMap<>();
 		try {
 			User userDeleted = userService.findUsers(id);
-			//System.out.println(cantidadPermitidaActualizada);
-			//userDeleted.setEstatus(false);
+			userDeleted.setStatus(false);
 			userDeleted.setUpdatedAt(new Date());
 			userService.create(userDeleted);
 			response.put("Mensaje: ", new String("Categoría Eliminada"));

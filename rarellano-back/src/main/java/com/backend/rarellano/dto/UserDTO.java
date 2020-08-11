@@ -37,6 +37,7 @@ public class UserDTO implements Serializable {
 	private Integer updatedBy;
 	private Date createdAt;
 	private Date updatedAt;
+	private Boolean status;
 	
 	public UserDTO(User user) {
 		
@@ -53,10 +54,11 @@ public class UserDTO implements Serializable {
 		this.updatedBy = user.getUpdatedBy();
 		this.createdAt = user.getCreatedAt();
 		this.updatedAt = user.getUpdatedAt();
+		this.status = user.getStatus();
 	}
 
 	public UserDTO(Long id, String user, String password, Integer project, Integer roll, String email, String phone,
-			Integer area, Integer position, Integer createdBy, Integer updatedBy, Date createdAt, Date updatedAt) {
+			Integer area, Integer position, Integer createdBy, Integer updatedBy, Date createdAt, Date updatedAt, Boolean status) {
 		this.id = id;
 		this.user = user;
 		this.password = password;
@@ -70,6 +72,7 @@ public class UserDTO implements Serializable {
 		this.updatedBy = updatedBy;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
+		this.status = status;
 	}
 	
 }

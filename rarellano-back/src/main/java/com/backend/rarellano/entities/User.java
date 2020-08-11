@@ -60,11 +60,15 @@ public class User implements Serializable {
 	@Column(name="updated_at")
 	private Date updatedAt;
 	
+	@Column(name="status")
+	private Boolean status;
+	
 	public User() {
 	}
 
 	public User(Long id, String user, String password, Integer project, Integer roll, String email, String phone,
-			Integer area, Integer position, Integer createdBy, Integer updatedBy, Date createdAt, Date updatedAt) {
+			Integer area, Integer position, Integer createdBy, Integer updatedBy, Date createdAt, Date updatedAt,
+			Boolean status) {
 		this.id = id;
 		this.user = user;
 		this.password = password;
@@ -78,6 +82,7 @@ public class User implements Serializable {
 		this.updatedBy = updatedBy;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
+		this.status = status;
 	}
 
 	public Long getId() {
@@ -184,9 +189,18 @@ public class User implements Serializable {
 		this.updatedAt = updatedAt;
 	}
 
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 
 	
 	
